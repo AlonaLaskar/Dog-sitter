@@ -1,49 +1,190 @@
-import { View,Text,TextInput,Image,StyleSheet,TouchableOpacity} from "react-native";
- 
-function Register(){
-    return(
-    <Text>עמוד הרשמה  </Text>
+
+import React, { useState } from 'react';
+import { View, Text,TextInput, Button, StyleSheet,TouchableWithoutFeedback,Keyboard,Image } from 'react-native';
+import userIcon from '/Users/ALONA LASKAR/AwesomeProject/DS/assets/user.png';
+import passwordIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/password.png';
+import emailIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/email.png';
+import phoneIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/phone.png';
+import addressIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/address.png';
+import calenderIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/calendar.png';
+
+
+
+
+const Register = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword,setConfirmPassword]=useState('');
+  const [email, setEmail] = useState('');
+  const [dob, setDOB] = useState('');
+  const [userPhone, setUserPhone] = useState('');
+  const [userCity, setUserCity] = useState('');
+  const [userStreet,setUserStreet]=useState('');
+
+  const handleSignUp = () => {
+    // send a request to the server with the new user data
+  }
+  
+
+  return (
     
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+    <View style={styles.container}>
+      
+    <View style={styles.frameView}>
+      <Image source={userIcon} style={styles.logo}/>
+      <TextInput
+        placeholder="שם משתמש"
+        placeholderTextColor="#003f5c"
+        inlineImageLeft='../AwesomeProject/DS/assets/user.png'
+        textAlign='right'
+        onChangeUserName={(username)=>setUsername(username)}
+        onChangeText={(email) => setEmail(email)}
+        value={username}
+      />
+      </View>
 
+    <View style={styles.frameView}>
+      <Image source={passwordIcom} style={styles.logo}/>
+      <TextInput
+        placeholder="סיסמה"
+        placeholderTextColor="#003f5c"
+        textAlign='right'
+        onChangeText={(password)=>setPassword(password)}
+        value={password}
+        secureTextEntry={true}
+      
+      />
+      </View>
 
+      
+    <View style={styles.frameView}>
+      <Image source={passwordIcom} style={styles.logo}/>
+      <TextInput
+        placeholder="אימות סיסמה"
+        placeholderTextColor="#003f5c"
+        textAlign='right'
+        onChangeText={(confirmPassword)=>setConfirmPassword(confirmPassword)}
+        value={confirmPassword}
+        secureTextEntry={true}
+      
+      />
+      </View>
 
+    <View style={styles.frameView}>
+      <Image source={emailIcom} style={styles.logo}/>
+      <TextInput
+        placeholder="אימייל"
+        placeholderTextColor="#003f5c"
+        textAlign='right'
+        onChangeText={(email) => setEmail(email)}
+        value={email}
+      />
+     </View>
 
+    <View style={styles.frameView}>
+      <Image source={phoneIcom} style={styles.logo}/>
+      <TextInput
+        placeholder="נייד"
+        placeholderTextColor="#003f5c"
+        textAlign='right'
+        onChangeText={setUserPhone}
+        value={userPhone}
+      />
+     </View>
 
+     <View style={styles.frameView}>
+      <Image source={addressIcom} style={styles.logo}/>
+        <TextInput
+        placeholder="עיר מגורים"
+        placeholderTextColor="#003f5c"
+        textAlign='right'
+        onChangeText={setUserCity}
+        value={userCity}
+        textContentType={userCity}
+      />
+      </View>
 
+    <View style={styles.frameView}>
+      <Image source={addressIcom} style={styles.logo}/>
+      <TextInput
+        placeholder="רחוב"
+        placeholderTextColor="#003f5c"
+        textAlign='right'
+        onChangeText={setUserStreet}
+        value={userStreet}
+      />
+    </View>
+    
+    <View style={styles.frameView}>
+      <Image source={calenderIcom} style={styles.logo}/>
+      <TextInput
+        placeholder=" (DD/MM/YYYY)"
+        placeholderTextColor="#003f5c"
+        textAlign='right'
+        onChangeText={setDOB}
+        value={dob}
+      />
+      </View>
 
+      <Button title="Sign Up" onPress={handleSignUp} />
+    </View>
+    </TouchableWithoutFeedback>
 
+  );
+};
 
-
-
-
-
-    );}
-
-
- export default Register;
-
- 
-const styles=StyleSheet.create({
-    viwe:{
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    width: '80%',
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    margin: 10,
+    fontWeight:'bold',
     backgroundColor:'white',
-    },
-        inputView: {
-            backgroundColor: "#FFC0CB",
-            borderRadius: 25,
-            width: "60%",
-            height: 50,
-            marginBottom: 20,
-            alignItems: "center",
-            alignSelf:"center",
-            justifyContent:"center",
-          },
-          TextInput: {
-            height: 50,
-            flex: 1,
-            padding: 10,
-            alignSelf:"center",
-            alignItems: "center",
-            justifyContent:"center",
+    textAlign:'center',
     
-          },
-        })
+  },
+  logoStyle: {
+    padding: 10,
+    margin: 5,
+    height: 25,
+    width: 25,
+    resizeMode: 'stretch',
+    alignItems: 'center',
+  },
+  logo :{
+    width:25,
+    height:25,
+    justifyContent:"space-around",
+   
+    
+  },
+  frameView: {
+    //backgroundColor: "#FFC0CB",
+    backgroundColor:'#dcdcdc',
+    borderRadius: 10,
+    width: "60%",
+   // height:50,
+    marginBottom: 25,
+    alignItems: "center",
+    //justifyContent:"center",
+    borderColor: 'gray',
+    borderWidth: 1,
+    flexDirection:'row-reverse',
+    borderBottomColor:'#ccc',
+    borderBottomWidth:1,
+    paddingBottom:8,
+  },
+  buttom:{
+
+  }
+});
+
+export default Register;

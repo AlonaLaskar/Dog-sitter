@@ -6,7 +6,6 @@ import CategoriesGridTile from '../components/CategoriesGridTile';
 
 function CategoriesScreen({navigation}){
     function renderCategoryItem(itemData){
-        
         function pressHandler(){
             navigation.navigate('DogSit',{
                 categoryId:itemData.item.id,
@@ -14,8 +13,7 @@ function CategoriesScreen({navigation}){
         }
         return (
             <CategoriesGridTile 
-            title = {itemData.item.title} 
-            color={itemData.item.color} 
+            title = {itemData.item.title}  
             onPress={pressHandler}/>
         );
     }

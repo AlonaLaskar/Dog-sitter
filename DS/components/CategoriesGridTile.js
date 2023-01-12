@@ -1,6 +1,6 @@
 import { Pressable, View, Text, StyleSheet, Platform } from 'react-native';
 
-function CategoriesGridTile({ title,onPress}) {
+function CategoriesGridTile({title,onPress}) {
   return (
     <View style={styles.gridItem}>
       <Pressable
@@ -24,18 +24,18 @@ export default CategoriesGridTile;
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
-    margin: 10,
-    height: 70,
-    borderRadius: 8,
+    margin: 40,
+    height: 90,
+    borderRadius: 100,
     flexDirection: 'row',
     fontWeight:'bold',
-    elevation: 4,
-    backgroundColor:'transparent',
+    elevation: 20,
+    backgroundColor:'white',
     shadowColor: 'black',
-    shadowOpacity: 1,
+    shadowOpacity: 0.25,
     shadowOffset: { width: 11, height: 20 },
     shadowRadius: 8,
-    overflow: Platform.OS === 'android' ? 'hidden' : 'visible'
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
   },
   button: {
     flex: 1,
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 8,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+
   },
   title: {
     fontWeight:'bold',

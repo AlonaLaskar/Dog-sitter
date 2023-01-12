@@ -1,12 +1,13 @@
 import { View,Text,TextInput,Image,StyleSheet,TouchableOpacity} from "react-native";
 import React, {useState} from 'react';
+import {Keyboard,TouchableWithoutFeedback} from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+//import { Entypo } from '@expo/vector-icons'; 
 
 
-
-function Login(){
+function Login({navigation}){
     const [email, setEmail] = useState("");
     const [password, setPassword]= useState("");
-  
     const handleLogin = () => {
       // בדוק תקינות שם משתמש וסיסמה
       if (email === 'admin' && password === 'password') {
@@ -20,17 +21,22 @@ function Login(){
       //move no forget password screen
       alert('נשלח קישור לאיפוס הסיסמה לכתובת הדוא"ל שלך');
     };
-    const handelSingin=(navigation)=>{
-    //  navigation.navigat('Register');
-      //move on to Singin screen
-      alert("אתה מועבר לדף התחברות");
-    };
+    const handelSingin = () => {
+      navigation.navigate("Register");
+   };
+
+
+   
+
+   
   
     return(
-        <View >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+        <View>
         <Image style={styles.image} source={require('/Users/ALONA LASKAR/AwesomeProject/DS/pic/unnamed.png')}/>
-        
         <View style={styles.inputView}>
+          
+       {/* <Entypo name="email" size={12} color="black" /> */}
           <TextInput
           style={styles.TextInput}
           placeholder= "אימייל"
@@ -60,14 +66,11 @@ function Login(){
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.inputB}>
-     
       <Text 
         style={styles.Singin_button}
         onPress={handelSingin}
-        
         >להרשמה 
         </Text> 
-      
       </TouchableOpacity>
 
       <TouchableOpacity style={styles. login_button}>
@@ -79,10 +82,10 @@ function Login(){
       </TouchableOpacity>
 
 
- 
       </View>
-
-    );}
+      </TouchableWithoutFeedback>
+    );
+  }
 
 
 export default  Login;
@@ -94,7 +97,8 @@ viwe:{
 backgroundColor:'white',
 },
     inputView: {
-        backgroundColor: "#FFC0CB",
+       // backgroundColor: "#FFC0CB",
+       backgroundColor:'#ffe4e1',
         borderRadius: 25,
         width: "60%",
         height: 50,
@@ -102,6 +106,8 @@ backgroundColor:'white',
         alignItems: "center",
         alignSelf:"center",
         justifyContent:"center",
+        borderColor: 'gray',
+        borderWidth: 1,
       },
       TextInput: {
         height: 50,
@@ -119,7 +125,6 @@ backgroundColor:'white',
         top:70,
         marginBottom: 100,
         justifyContent:"space-around",
-
         alignSelf:"center",
 
       },
@@ -133,6 +138,7 @@ backgroundColor:'white',
         alignItems:"center",
         justifyContent:"center",
         alignSelf:"center",
+        
 
 
       },
@@ -146,6 +152,8 @@ backgroundColor:'white',
         marginTop:70,
         backgroundColor:"#a9a9a9",
         alignSelf:"center",
+        borderColor: 'gray',
+        borderWidth: 1,
 
       },
       Singin_button:{
@@ -153,6 +161,7 @@ backgroundColor:'white',
         top:30,
         marginBottom: 30,
         textAlign:"center",
+        
         
 
       },
@@ -165,5 +174,12 @@ backgroundColor:'white',
         alignItems: "center",
         alignSelf:"center",
         justifyContent:"center",
+        borderColor: 'gray',
+        borderWidth: 1,
+      },
+      viewIcon:{
+        flexDirection:'row',
+
       }
+    
 })

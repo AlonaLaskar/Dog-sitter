@@ -23,7 +23,8 @@ return(
             <Text style={styles.title} >{title} </Text>
             <Image source={{uri:imageUrl}} style={styles.image}/>
             <Text style={styles.littleDetails}> {name},</Text>
-            <Text style={styles.littleDetails}>{age}. {location}</Text>
+            <Text style={styles.littleDetails}> {location}</Text>
+            <Text style={styles.littleDetails}> {age}</Text>
   
             </View>
           </View>
@@ -34,11 +35,11 @@ export default DogSitterItem;
 
 const styles=StyleSheet.create({
     image:{
-      resizeMode: "center",
+      flex:1,
+      resizeMode: "contain",
+      resizeMode:'repeat',
       height: 250,
       width: 250,
-      borderBottomRightRadius: 20,
-      borderBottomLeftRadius: 20
     },
     title :{
         fontWeight:'bold',
@@ -53,20 +54,22 @@ const styles=StyleSheet.create({
         margin:40,
         borderRadius:20,
         overflow:Platform.OS=='android'?'hidden':'visible',
-        backgroundColor:'white',
         elevation:4,
+        backgroundColor:'white',
         shadowColor: 'black',
         shadowOpacity: 0.25,
         shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 8
+        shadowRadius: 8,
+       
+
     },
     innerContainer: {
       flex: 1,
-      padding: 16,
+      padding: 0,
       borderRadius: 8,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor:''
+      backgroundColor:'transparency'
     },
     littleDetails:{
         fontSize :14,

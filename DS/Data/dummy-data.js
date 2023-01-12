@@ -1,9 +1,9 @@
 import Category from '../models/Category';
 import DogSitter from '../models/DogSitter';
 export const CATEGORIES = [
-  new Category('c1','דוג סיטר'),
-  new Category('c2', 'דוג ווקר'),
-  new Category('c3', 'מחפש עבודה'),
+  new Category('c1','דוג סיטר','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fvector%2Fsitting-dog-flat-line-icon-vector-thin-sign-of-black-puppy-animal-logo-pet-shop-gm1160720703-317796435&psig=AOvVaw0kbOXzg01WOllx6wKV-s5_&ust=1672999185449000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMCXzOOVsPwCFQAAAAAdAAAAABAJ'),
+  new Category('c2', 'דוג ווקר','https://www.google.com/imgres?imgurl=https%3A%2F%2Ft3.ftcdn.net%2Fjpg%2F01%2F70%2F11%2F76%2F360_F_170117681_nRm09hfGxLjUDoOJugXv6vFk2h5WCBgp.jpg&imgrefurl=https%3A%2F%2Fstock.adobe.com%2Fsearch%2Fimages%3Fk%3Ddog%2Bwalker%2Blogo&tbnid=lXx8ULulimHZ6M&vet=10CAQQxiAoA2oXChMIgKK02JSw_AIVAAAAAB0AAAAAEAc..i&docid=sXf_gts0ub8tfM&w=360&h=360&itg=1&q=dogs%20walker%20logo&ved=0CAQQxiAoA2oXChMIgKK02JSw_AIVAAAAAB0AAAAAEAc'), 
+  new Category('c3', 'מחפש עבודה','https://www.shutterstock.com/image-vector/job-searching-icon-260nw-1224749530.jpg'),
 ];
 
 export const DOGSITTER = [

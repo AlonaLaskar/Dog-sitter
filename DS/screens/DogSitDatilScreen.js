@@ -1,10 +1,7 @@
-import ReactNative from "react-native";
+import { Text, View, Image,StyleSheet } from "react-native";
 import { DOGSITTER } from "../Data/dummy-data";
-import DogSitterItem from "../components/DogSitterItem";
 import DogSitDatil from "../components/DogSitDatil";
 
-
-const { Text, View, Image,StyleSheet } = ReactNative;
 
 function DogSitDatilScreen({ route }) {
   const dogSitterId = route.params.dogSitterId;
@@ -32,8 +29,8 @@ function DogSitDatilScreen({ route }) {
 export default DogSitDatilScreen;
 const styles=StyleSheet.create({
     image:{
-        width :250,
-        height:250,
+        width :200,
+        height:200,
         backgroundColor:'white'
     },
     title:{

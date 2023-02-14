@@ -15,7 +15,7 @@ export default function App() {
   return (
   <SafeAreaView style={{flex: 1}}>
     <ImageBackground
-    source={require('..//DS/pic/backup2.jpg')}
+    source={require('./pic/backup2.jpg')}
     resizeMode="cover"
     style={styles.image}
     >

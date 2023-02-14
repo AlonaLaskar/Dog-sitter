@@ -1,8 +1,7 @@
 import { View,Text,TextInput,Image,StyleSheet,TouchableOpacity} from "react-native";
 import React, {useState} from 'react';
 import {Keyboard,TouchableWithoutFeedback} from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
-//import { Entypo } from '@expo/vector-icons'; 
+
 
 
 function Login({navigation}){
@@ -33,11 +32,10 @@ function Login({navigation}){
     return(
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View>
-        <Image style={styles.image} source={require('/Users/ALONA LASKAR/AwesomeProject/DS/pic/unnamed.png')}/>
+          <Image style={styles.image} source={require('../../pic/unnamed.png')}/>
+       
         <View style={styles.inputView}>
-          
-       {/* <Entypo name="email" size={12} color="black" /> */}
-          <TextInput
+         <TextInput
           style={styles.TextInput}
           placeholder= "אימייל"
           placeholderTextColor="#003f5c"
@@ -47,7 +45,7 @@ function Login({navigation}){
          </View>
 
          <View style={styles.inputView}>
-        <TextInput
+          <TextInput
           style={styles.TextInput}
           placeholder="סיסמה"
           placeholderTextColor="#003f5c"

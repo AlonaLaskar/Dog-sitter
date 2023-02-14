@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
 import { View, Text,TextInput, Button, StyleSheet,TouchableWithoutFeedback,Keyboard,Image } from 'react-native';
-import userIcon from '/Users/ALONA LASKAR/AwesomeProject/DS/assets/user.png';
-import passwordIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/password.png';
-import emailIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/email.png';
-import phoneIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/phone.png';
-import addressIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/address.png';
-import calenderIcom from'/Users/ALONA LASKAR/AwesomeProject/DS/assets/calendar.png';
+import userIcon from '../../assets/user.png';
+import passwordIcom from'../../assets/password.png';
+import emailIcom from'../../assets/email.png';
+import phoneIcom from'../../assets/phone.png';
+import addressIcom from'../../assets/address.png';
+import calenderIcom from'../../assets/calendar.png';
 
 
 
@@ -36,7 +36,6 @@ const Register = () => {
       <TextInput
         placeholder="שם משתמש"
         placeholderTextColor="#003f5c"
-        inlineImageLeft='../AwesomeProject/DS/assets/user.png'
         textAlign='right'
         onChangeUserName={(username)=>setUsername(username)}
         onChangeText={(email) => setEmail(email)}

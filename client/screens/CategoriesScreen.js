@@ -7,14 +7,17 @@ import CategoriesGridTile from '../components/CategoriesGridTile';
 function CategoriesScreen({navigation}){
     function renderCategoryItem(itemData){
         function pressHandler(){
-            navigation.navigate('DogSit',{
+            navigation.navigate('dogSiter',{
                 categoryId:itemData.item.id,
+                
             });
         }
         return (
             <CategoriesGridTile 
-            title = {itemData.item.title}  
+            title = {itemData.item.title} 
+            imageUrl={itemData.item.imageUrl} // Pass imageUrl as a prop 
             onPress={pressHandler}/>
+           
         );
     }
     return (

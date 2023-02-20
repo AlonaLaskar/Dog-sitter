@@ -6,7 +6,7 @@ function DogSitterItem({id, title,imageUrl,name,age,location}){
 const navigation=useNavigation();
 
 function selectDogSitItemHendler(){
-        navigation.navigate("DogDatil",{
+        navigation.navigate("dogSiter",{
       dogSitterId: id,
     });  
 }
